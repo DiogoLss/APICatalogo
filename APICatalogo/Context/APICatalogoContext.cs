@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 namespace APICatalogo.Context;
 public class APICatalogoContext : DbContext
 {
-    protected APICatalogoContext(DbContextOptions<APICatalogoContext> options ) : base( options )
+    public APICatalogoContext(DbContextOptions<APICatalogoContext> options ) : base( options )
     {
     }
     public DbSet<Categoria>? Categorias { get; set; }
