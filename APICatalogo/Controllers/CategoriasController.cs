@@ -9,9 +9,9 @@ namespace APICatalogo.Controllers
     [ApiController]
     public class CategoriasController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly APICatalogoContext _context;
 
-        public CategoriasController(AppDbContext context)
+        public CategoriasController(APICatalogoContext context)
         {
             _context = context;
         }
