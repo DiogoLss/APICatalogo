@@ -11,9 +11,9 @@ namespace APICatalogo.Repository
         {
         }
 
-        public PagedList<Categoria> GetCategorias(CategoriasParameters parameters)
+        public async Task<PagedList<Categoria>> GetCategorias(CategoriasParameters parameters)
         {
-            return PagedList<Categoria>.ToPagedList(Get().OrderBy(on => on.Nome),
+            return await PagedList<Categoria>.ToPagedList(Get().OrderBy(on => on.Nome),
                 parameters.PageNumber,
                 parameters.PageSize);
         }
