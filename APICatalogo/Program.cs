@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 //CONFIGURE SERVICES
+builder.Services.AddCors();
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     options.JsonSerializerOptions
@@ -103,6 +104,15 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
+/*WithOrigins, urls que podem acessar
+ * WithMethods, somente os metodos que podem ser usados
+ * AllowAnyMethod, permite todos
+ */
+
+app.UseCors(opt => opt
+    .WithOrigins("")     
+    .WithMethods("GET"));
 
 app.MapControllers();
 
